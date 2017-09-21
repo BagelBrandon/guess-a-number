@@ -3,11 +3,25 @@ import random
 # config
 low = 1
 high = 100
+limit = 7
 
-#Helper Functions
+# helper functions
+def show_start_screen():
+    print("""
+ _____                              _   _                 _               
+|  __ \                            | \ | |               | |              
+| |  \/_   _  ___ ___ ___    __ _  |  \| |_   _ _ __ ___ | |__   ___ _ __ 
+| | __| | | |/ _ / __/ __|  / _` | | . ` | | | | '_ ` _ \| '_ \ / _ | '__|
+| |_\ | |_| |  __\__ \__ \ | (_| | | |\  | |_| | | | | | | |_) |  __| |   
+ \____/\__,_|\___|___|___/  \__,_| \_| \_/\__,_|_| |_| |_|_.__/ \___|_|""")
+
+
+def show_credits():
+    print("This awesome game was created by Bagel Brandon.")
+    
 def get_guess():
     while True:
-        guess = input("Guess a number:")
+        guess = input("Guess a number: ")
 
         if guess.isnumeric():
             guess = int(guess)
@@ -15,46 +29,57 @@ def get_guess():
         else:
             print("You must enter a number.")
 
+def pick_number():
+    print("I'm thinking of a number from " + str(low) + " to " + str(high) +".")
+
+    return random.randint(low, high)
+
+def check_guess(guess, rand):
+    if guess < rand:
+        print("You guessed too low.")
+    elif guess > rand:
+        print("You guessed too high.")
+
+def show_result(guess, rand):
+    if guess == rand:
+        print("You win!")
+    else:
+        print("You are such a loser! The number was " + str(rand) + ".")
+
 def play_again():
     while True:
-        decision = input("You wanna have another go?")
+        decision = input("Would you like to play again? (y/n) ")
 
-        if decision == 'yes' or decision == 'y' or decision == 'Yes':
+        if decision == 'y' or decision == 'yes':
             return True
-        elif decision == 'no' or decision == 'No' or decision == 'n':
+        elif decision == 'n' or decision == 'no':
             return False
         else:
-            print ("Use yes or no you imbecile")
+            print("I don't understand. Please enter 'y' or 'n'.")
 
-again = True
-
-while again:        
-#start game
-    rand = random.randint(low, high)
-    print("I'm thinking of a number from " + str(low) + " to " + str(high) + ".");
-
+def play():
     guess = -1
     tries = 0
-    limit = 10
 
-    #play game
+    rand = pick_number()
+    
     while guess != rand and tries < limit:
         guess = get_guess()
-        
-        if guess < rand:
-            print("You guessed too low.")
-        elif guess > rand:
-            print("You guessed too high.")
-            
-        tries +=1
+        check_guess(guess, rand)
 
-    # end
-    if guess == rand:
-        print("Good job kid, you know basic math")
-    else:
-        print ("You're trash at everything, loser. The number was " + str(rand) + ".")
+        tries += 1
 
-    again = play_again()
+    show_result(guess, rand)
 
 
-print("Peace nerd")
+# Game starts running here
+show_start_screen()
+
+playing = True
+
+while playing:
+    play()
+    playing = play_again()
+
+show_credits()
+
