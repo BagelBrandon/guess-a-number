@@ -7,9 +7,14 @@ high = 100
 
 # helper functions
 def show_start_screen():
-    print("*************************")
-    print("*  Guess a Number A.I!  *")
-    print("*************************")
+    print("""
+ _____                               _   _                 _               
+|  __ \                             | \ | |               | |              
+| |  \/_   _  ___  ___ ___    __ _  |  \| |_   _ _ __ ___ | |__   ___ _ __ 
+| | __| | | |/ _ \/ __/ __|  / _` | | . ` | | | | '_ ` _ \| '_ \ / _ \ '__|
+| |_\ \ |_| |  __/\__ \__ \ | (_| | | |\  | |_| | | | | | | |_) |  __/ |   
+ \____/\__,_|\___||___/___/  \__,_| \_| \_/\__,_|_| |_| |_|_.__/ \___|_|   
+                                                                         """)
 
 def show_credits():
     print("This was made by ya boy Bagel Brandon")
@@ -29,28 +34,24 @@ def pick_number():
     print("Think of a number between 1 and 100. Don't cheat scumbag.")
     print()
     input("Press enter to continue")
-    print()
+    print("")
     
     
     pass
 
 def check_guess(guess):
-    """
-    Computer will ask if guess was too high, low, or correct.
-
-    Returns -1 if the guess was too low
-             0 if the guess was correct
-             1 if the guess was too high
-    """
+    
+    
     print(guess)
-    print("Was my guess too high, too low or correct?")
-    decision = input("")
+    decision = input("Was my guess too high, too low or correct?")
+
+    print()
 
     if decision == 'high' or decision == 'h' or decision == 'High':
         return 1
     elif decision == 'low' or decision == 'l' or decision == 'Low':
         return -1
-    elif decision == 'correct' or 'c':
+    elif decision == 'correct' or decision == 'c':
         return 0
     else:
         print("Enter High, Low or Correct, kid.") 
@@ -59,12 +60,12 @@ def check_guess(guess):
 
     
 
-def show_result():
+def show_result(guess):
     """
     Says the result of the game. (The computer might always win.)
     """
+    print("I won, you're trash kid")
     
-
 def play_again():
     while True:
         decision = input("Would you like to play again? (y/n) ")
