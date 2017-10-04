@@ -1,9 +1,15 @@
 import random
 
 # config
-low = 1
-high = 100
 
+
+print("What's your name?")
+name = input()
+print()
+print("We're gonna play a game, " + name + " pick a low Number.")
+low = input()
+print("Now pick a high value, this number has to be larger than the low.")
+high = input()
 
 # helper functions
 def show_start_screen():
@@ -16,6 +22,7 @@ def show_start_screen():
  \____/\__,_|\___||___/___/  \__,_| \_| \_/\__,_|_| |_| |_|_.__/ \___|_|   
                                                                          """)
 
+    
 def show_credits():
     print("This was made by ya boy Bagel Brandon")
     print("")
@@ -27,11 +34,13 @@ def get_guess(current_low, current_high):
     """
     guess = (current_low + current_high) // 2
     
-    return guess 
+    return guess
+
 
 def pick_number():
 
-    print("Think of a number between 1 and 100. Don't cheat scumbag.")
+    print()
+    print("Think of a number between " + low + " and " + high + "," + name + ". Don't cheat.")
     print()
     input("Press enter to continue")
     print("")
@@ -43,28 +52,26 @@ def check_guess(guess):
     
     
     print(guess)
-    decision = input("Was my guess too high, too low or correct?")
+    decision = input("Was my guess too high, too low or correct " + name + "?")
 
     print()
-
-    if decision == 'high' or decision == 'h' or decision == 'High':
+    decision = decision.lower()
+    if decision == 'high' or decision == 'h':
         return 1
-    elif decision == 'low' or decision == 'l' or decision == 'Low':
+    elif decision == 'low' or decision == 'l':
         return -1
     elif decision == 'correct' or decision == 'c':
         return 0
     else:
-        print("Enter High, Low or Correct, kid.") 
+        print("Enter High, Low or Correct, " + name + ".") 
         
     
 
     
 
 def show_result(guess):
-    """
-    Says the result of the game. (The computer might always win.)
-    """
-    print("I won, you're trash kid")
+
+    print("I won, you're trash, " + name + ".")
     
 def play_again():
     while True:
