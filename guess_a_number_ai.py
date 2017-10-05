@@ -8,8 +8,11 @@ name = input()
 print()
 print("We're gonna play a game, " + name + " pick a low Number.")
 low = input()
+low = int(low)
+
 print("Now pick a high value, this number has to be larger than the low.")
 high = input()
+high = int(high)
 
 # helper functions
 def show_start_screen():
@@ -40,7 +43,7 @@ def get_guess(current_low, current_high):
 def pick_number():
 
     print()
-    print("Think of a number between " + low + " and " + high + "," + name + ". Don't cheat.")
+    print("Think of a number between the low and high you've chosen, " + name + ". Don't cheat.")
     print()
     input("Press enter to continue")
     print("")
@@ -52,7 +55,8 @@ def check_guess(guess):
     
     
     print(guess)
-    decision = input("Was my guess too high, too low or correct " + name + "?")
+    print("Was my guess too high, too low or correct " + name + "?")
+    decision = input()
 
     print()
     decision = decision.lower()
@@ -104,6 +108,7 @@ def play():
 
     show_result(guess,)
 
+    
 
 # Game starts running here
 show_start_screen()
