@@ -1,7 +1,7 @@
 import random
+import math
 
 # config
-
 
 print("What's your name?")
 name = input()
@@ -13,6 +13,9 @@ low = int(low)
 print("Now pick a high value, this number has to be larger than the low.")
 high = input()
 high = int(high)
+
+limit = math.ceil(math.log(high-low + 1, 2))
+tries = 0
 
 # helper functions
 def show_start_screen():
@@ -27,8 +30,7 @@ def show_start_screen():
 
     
 def show_credits():
-    print("This was made by ya boy Bagel Brandon")
-    print("")
+    print("This game was made by ya boy, BagelBrandon")
     
     
 def get_guess(current_low, current_high):
@@ -51,7 +53,7 @@ def pick_number():
     
     pass
 
-def check_guess(guess):
+def check_guess(guess, tries):
     
     
     print(guess)
@@ -73,10 +75,17 @@ def check_guess(guess):
 
     
 
-def show_result(guess):
+def show_result(guess, tries):
 
-    print("I won, you're trash, " + name + ".")
-    
+    print("I won, you're trash, " + name + ". It took me " + str(tries) + "tries.")
+    print("""
+ ___          .__         
+|   | __  _  _|__| ____   
+|   | \ \/ \/ /  |/    \  
+|   |  \     /|  |   |  \ 
+|___|   \/\_/ |__|___|  / 
+                      \/
+                    """)
 def play_again():
     while True:
         decision = input("Would you like to play again? (y/n) ")
@@ -92,12 +101,13 @@ def play():
     current_low = low
     current_high = high
     check = -1
+    tries = 0
     
     pick_number()
     
     while check != 0:
         guess = get_guess(current_low, current_high)
-        check = check_guess(guess)
+        check = check_guess(guess, tries)
 
         if check == -1:
             # adjust current_low
@@ -106,7 +116,8 @@ def play():
             # adjust current_high
             current_high = high - guess
 
-    show_result(guess,)
+        tries += 1
+    show_result(guess, tries)
 
     
 
