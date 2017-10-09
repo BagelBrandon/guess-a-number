@@ -1,0 +1,87 @@
+Python 3.6.2 (v3.6.2:5fd33b5, Jul  8 2017, 04:14:34) [MSC v.1900 32 bit (Intel)] on win32
+Type "copyright", "credits" or "license()" for more information.
+>>> 
+ RESTART: C:\Users\thunte0561\Coding With Coop Dogg\guess-a-number\guess_a_number_ai.py 
+What's your name?
+Brandon
+
+We're gonna play a game, Brandon pick a low Number.
+1
+Now pick a high value, this number has to be larger than the low.
+100
+
+ _____                               _   _                 _               
+|  __ \                             | \ | |               | |              
+| |  \/_   _  ___  ___ ___    __ _  |  \| |_   _ _ __ ___ | |__   ___ _ __ 
+| | __| | | |/ _ \/ __/ __|  / _` | | . ` | | | | '_ ` _ \| '_ \ / _ \ '__|
+| |_\ \ |_| |  __/\__ \__ \ | (_| | | |\  | |_| | | | | | | |_) |  __/ |   
+ \____/\__,_|\___||___/___/  \__,_| \_| \_/\__,_|_| |_| |_|_.__/ \___|_|   
+                                                                         
+
+Think of a number between the low and high you've chosen, Brandon. Don't cheat.
+
+Press enter to continue
+
+50
+Was my guess too high, too low or correct Brandon?
+low
+
+75
+Was my guess too high, too low or correct Brandon?
+high
+
+62
+Was my guess too high, too low or correct Brandon?
+low
+
+68
+Was my guess too high, too low or correct Brandon?
+low
+
+71
+Was my guess too high, too low or correct Brandon?
+high
+
+69
+Was my guess too high, too low or correct Brandon?
+correct
+
+I won, you're trash, Brandon. It took me 6 tries.
+
+ ___          .__         
+|   | __  _  _|__| ____   
+|   | \ \/ \/ /  |/    \  
+|   |  \     /|  |   |  \ 
+|___|   \/\_/ |__|___|  / 
+                      \/
+                    
+Would you like to play again? (y/n) y
+
+Think of a number between the low and high you've chosen, Brandon. Don't cheat.
+
+Press enter to continue
+
+50
+Was my guess too high, too low or correct Brandon?
+low
+
+75
+Was my guess too high, too low or correct Brandon?
+high
+
+62
+Was my guess too high, too low or correct Brandon?
+correct
+
+I won, you're trash, Brandon. It took me 3 tries.
+
+ ___          .__         
+|   | __  _  _|__| ____   
+|   | \ \/ \/ /  |/    \  
+|   |  \     /|  |   |  \ 
+|___|   \/\_/ |__|___|  / 
+                      \/
+                    
+Would you like to play again? (y/n) n
+This game was made by ya boy, BagelBrandon
+>>> 
